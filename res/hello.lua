@@ -192,7 +192,7 @@ local function main()
     local effectPath = CCFileUtils:sharedFileUtils():fullPathForFilename("effect1.wav")
     SimpleAudioEngine:sharedEngine():preloadEffect(effectPath)
 ]]--
-    -- run
+    ----- run
     local sceneGame = CCScene:create()
     sceneGame:addChild(createLayerFarm())
     sceneGame:addChild(createLayerMenu())
