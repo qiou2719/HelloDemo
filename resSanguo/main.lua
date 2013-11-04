@@ -15,8 +15,11 @@ local function main()
     CCFileUtils:sharedFileUtils():addSearchPath("script/")
     CCFileUtils:sharedFileUtils():addSearchPath("img/")
     CCFileUtils:sharedFileUtils():addSearchPath("ccbi/")
+    CCFileUtils:sharedFileUtils():addSearchPath("pbs/")
     require("config")
     require("framework.init")
+    require("common.PbRegister")
+    require("common.NetRegister")
     require("model.GameData")
     require("controller.ControllerFactory")
 
@@ -25,11 +28,13 @@ local function main()
         audio.preloadSound(v)
     end
     
-    --- init
+    -- init
     GameData:Instance():init()
 
-    --- enter first scene
-    ControllerFactory:Instance():create(ControllerType.REGIST_CONTROLLER):enter()
+    -- enter first scene
+    local playStatesController = ControllerFactory:Instance():create(ControllerType.PLAY_STATES_CONTROLLER)
+    display.replaceScene(playStatesController:getScene(), "fade", 0.6, display.COLOR_WHITE)
+    net.loop()
 end
 
 xpcall(function()

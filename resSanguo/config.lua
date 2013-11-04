@@ -4,13 +4,13 @@ DEBUG = 2
 -- DEBUG_FPS = true
 
 -- design resolution
-CONFIG_SCREEN_WIDTH  = 320
-CONFIG_SCREEN_HEIGHT = 480
+CONFIG_SCREEN_WIDTH  = 640
+CONFIG_SCREEN_HEIGHT = 960
 
 -- auto scale mode
 CONFIG_SCREEN_AUTOSCALE = "FIXED_WIDTH"
 
---- sounds
+-- sounds
 GAME_SFX = {
     tapButton  = "sfx/TapButtonSound.mp3",
     backButton = "sfx/BackButtonSound.mp3",
